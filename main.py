@@ -1,12 +1,11 @@
 #!/usr/bin/env python
 
-from logging import basicConfig, INFO, getLogger
-from time import sleep
 from json import load, dump
+from logging import basicConfig, INFO, getLogger
+
+from requests import get
 from telegram import ReplyKeyboardMarkup, Update, ReplyKeyboardRemove
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, ConversationHandler, CallbackContext
-from schedule import every, run_pending
-from requests import get
 
 basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=INFO)
 logger = getLogger(__name__)
